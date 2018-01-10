@@ -1,6 +1,5 @@
 # create32 theme
-# features:
-# path is autoshortened to ~30 characters
+
 
 
 if [ $UID -eq 0 ]; then NAMECOLOR="magenta"; else NAMECOLOR="green"; fi
@@ -10,7 +9,7 @@ local shell_mark="%(?.%{$fg_bold[white]%}%(!.#.$).%{$fg_bold[red]%}%(!.#.$))"
 local return_code="%(?..%{$fg[red]%}[%?] %{$reset_color%})"
 
 # prompt
-PROMPT='%{$fg[$NAMECOLOR]%}%n%b%{$reset_color%}:%{$fg_bold[$PATHCOLOR]%}%30<...<%~%<<%{$reset_color%}] $shell_mark %{$reset_color%}'
+PROMPT='%{$fg[$NAMECOLOR]%}%n%b%{$reset_color%}:%{$fg_bold[$PATHCOLOR]%}%30<...<%~%<<%{$reset_color%}%{$fg[green]%}]%{$reset_color%} $shell_mark %{$reset_color%}'
 
 
 if [ -z "${plugins##*git*}" -a "$USE_GIT" != "false" -o "$USE_GIT" = "true" ]; then
