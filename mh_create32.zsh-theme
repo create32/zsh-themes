@@ -7,17 +7,27 @@
 # turns username green if superuser, otherwise it is white
 
 # if superuser make the username green
-if [ $UID -eq 0 ]; then NCOLOR="green"; else NCOLOR="white"; fi
+
+if [ $UID -eq 0 ]; then NCOLOR="magenta"; else NCOLOR="white"; fi
+PATHCOLOR="red"
+
+local shell_mark="%(?.%{$fg_bold[white]%}%(!.#.$).%{$fg_bold[red]%}%(!.#.$))"
+local return_code="%(?..%{$fg[red]%}[%?] %{$reset_color%})"
 
 # prompt
-PROMPT='[%{$fg[$NCOLOR]%}%B%n%b%{$reset_color%}:%{$fg[red]%}%30<...<%~%<<%{$reset_color%}]%(!.#.$) '
-RPROMPT='$(git_prompt_info)'
-
+PROMPT='%{$fg[$NCOLOR]%}%B%n%b%{$reset_color%}:%{$fg_bold[$PATHCOLOR]%}%30<...<%~%<<%{$reset_color%} $shell_mark %{$reset_color%}'
+if [[ "$plugins" == *"git"* ]]; then
+	RPS1=' ${return_code} $(git_prompt_info) %{$fg[blue]%}%*%{$reset_color%}'
+else 
+	RPS1='${return_code} %{$fg[blue]%}%*%{$reset_color%}'
+fi
+	
 # git theming
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[gray]%}(%{$fg_no_bold[yellow]%}%B"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%b%{$fg_bold[gray]%})%{$reset_color%} "
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg_bold[red]%}✱"
+
 
 # LS colors, made with http://geoff.greer.fm/lscolors/
 export LSCOLORS="Gxfxcxdxbxegedabagacad"
