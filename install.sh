@@ -20,9 +20,11 @@ fi
 cp $THEMENAME $HOME/.oh-my-zsh/custom/themes/
 
 # Setting .zshrc
-if [ ! "$ZSH_THEME" = "$FNAME" ]; then
+zsh_theme=$(zsh -c "source ~/.zshrc; echo \$ZSH_THEME")
+echo $zsh_theme -- $FNAME
+if [ ! "$zsh_theme" = "$FNAME" ]; then
 	echo "ZSH_THEME=$FNAME on ~/.zshrc"
 	read -n1 -r -p "Press any key to continue..." key
 	vim ~/.zshrc
-	zsh
 fi
+zsh

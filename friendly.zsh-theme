@@ -13,9 +13,9 @@ PROMPT='%{$fg_bold[$NAMECOLOR]%}%n%b%{$reset_color%}:%{$fg_bold[$PATHCOLOR]%}%30
 
 
 if [ -z "${plugins##*git*}" -a "$USE_GIT" != "false" -o "$USE_GIT" = "true" ]; then
-	RPS1=' ${return_code}$(git_prompt_info)%{$fg[blue]%}%*%{$reset_color%}'
+	RPS1=' ${return_code}$(git_prompt_info)%{$fg[blue]%}%5>>%*%{$reset_color%}'
 else
-	RPS1='${return_code}%{$fg[blue]%}%*%{$reset_color%}'
+	RPS1='${return_code}%{$fg[blue]%}%5>>%*%{$reset_color%}'
 fi
 
 	
