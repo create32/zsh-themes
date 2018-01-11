@@ -2,7 +2,7 @@
 
 
 
-if [ $UID -eq 0 ]; then NAMECOLOR="magenta"; else NAMECOLOR="green"; fi
+if [ $UID -eq 0 ]; then NAMECOLOR="red"; else NAMECOLOR="green"; fi
 PATHCOLOR="blue"
 
 local shell_mark="%(?.%{$fg[white]%}%(!.#.$).%{$fg_bold[red]%}%(!.#.$))"
