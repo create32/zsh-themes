@@ -15,9 +15,9 @@ local return_code="%(?..%{$fg[red]%}%? %{$reset_color%})"
 PROMPT='[%{$fg[$NCOLOR]%}%B%n%b%{$reset_color%}:%{$fg[red]%}%30<...<%~%<<%{$reset_color%}]$shell_mark '
 
 if [ -z "${plugins##*git*}" -a "$USE_GIT" != "false" -o "$USE_GIT" = "true" ]; then
-    RPS1=' ${return_code}$(git_prompt_info)%{$fg[blue]%}%4>>%*%{$reset_color%}'
+    RPS1=' ${return_code}$(git_prompt_info)%{$fg[blue]%}%T%{$reset_color%}'
 else
-    RPS1='${return_code}%{$fg[blue]%}%4>>%*%{$reset_color%}'
+    RPS1='${return_code}%{$fg[blue]%}%T%{$reset_color%}'
 fi
 
 
