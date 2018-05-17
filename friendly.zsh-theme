@@ -9,7 +9,7 @@ local shell_mark="%(?.%{$fg[white]%}%(!.#.$).%{$fg_bold[red]%}%(!.#.$))"
 local return_code="%(?..%{$fg[red]%}[%?] %{$reset_color%})"
 
 # prompt
-PROMPT='%{$fg_bold[$NAMECOLOR]%}%n%b%{$reset_color%}:%{$fg_bold[$PATHCOLOR]%}%30<...<%~%<<%{$reset_color%}$shell_mark %{$reset_color%}'
+PROMPT='%{$fg_bold[$NAMECOLOR]%}%n%b%{$reset_color%}:%{$fg_bold[$PATHCOLOR]%}%60<...<%~%<<%{$reset_color%}$shell_mark %{$reset_color%}'
 
 
 if [ -z "${plugins##*git*}" -a "$USE_GIT" != "false" -o "$USE_GIT" = "true" ]; then

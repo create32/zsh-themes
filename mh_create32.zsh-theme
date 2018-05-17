@@ -2,7 +2,7 @@
 # preview: http://cl.ly/1y2x0W0E3t2C0F29043z
 
 # features:
-# path is autoshortened to ~30 characters
+# path is autoshortened to ~60 characters
 # displays git status (if applicable in current folder)
 # turns username green if superuser, otherwise it is white
 
@@ -12,7 +12,7 @@ local shell_mark="%(?.%{$fg[white]%}%(!.#.$).%{$fg_bold[red]%}%(!.#.$))"
 local return_code="%(?..%{$fg[red]%}%? %{$reset_color%})"
 
 # prompt
-PROMPT='[%{$fg[$NCOLOR]%}%B%n%b%{$reset_color%}:%{$fg[red]%}%30<...<%~%<<%{$reset_color%}]$shell_mark '
+PROMPT='[%{$fg[$NCOLOR]%}%B%n%b%{$reset_color%}:%{$fg[red]%}%60<...<%~%<<%{$reset_color%}]$shell_mark '
 
 if [ -z "${plugins##*git*}" -a "$USE_GIT" != "false" -o "$USE_GIT" = "true" ]; then
     RPS1=' ${return_code}$(git_prompt_info)%{$fg[blue]%}%T%{$reset_color%}'
