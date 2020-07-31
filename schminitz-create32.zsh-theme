@@ -32,7 +32,7 @@ PROMPT='%(?, ,%{$fg[red]%}FAIL%{$reset_color%}
 else 
 PROMPT='%(?, ,%{$fg[red]%}FAIL%{$reset_color%}
 )
-%{$fg[green]%}[%*]%{$reset_color%} %{$fg[yellow]%}%~ ♪%{$reset_color%}$(git_prompt_info)%{$reset_color%}$(git_prompt_ahead)%{$reset_color%}$(vim_bg_info)
+%{$fg[green]%}[%*]%{$reset_color%} %{$fg[yellow]%}%~ ♪%{$reset_color%}$(git_prompt_info)%{$reset_color%}$(git_prompt_ahead)%{$reset_color%}
 %{$fg[cyan]%}%n%{$reset_color%}%{$fg[magenta]%}@%m%{$reset_color%}${PROMPT_CHAR} '
 fi
 
