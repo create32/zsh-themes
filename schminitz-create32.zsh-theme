@@ -14,7 +14,7 @@ ZSH_THEME_GIT_PROMPT_AHEAD="%{$fg[red]%}➦"
 function prompt_char {
 	if [ $UID -eq 0 ]; then echo "%{$fg_bold[red]%}#%{$reset_color%}"; else echo "%{$fg_bold[white]%}$%{$reset_color%}"; fi
 }
-
+PROMPT_CHAR=$(prompt_char)
 
 # get the name of the branch we are on
 function vim_bg_info() {
@@ -23,20 +23,11 @@ function vim_bg_info() {
   fi
 }
 
-#PROMPT='%{$fg[green]%}[%*]%{$reset_color%}
-#%(?.%{$fg[red]%}%(!.#.$).%{$fg_bold[white]%}%(!.#.$)) '
-
-#PROMPT='%(?, ,%{$fg[red]%}FAIL%{$reset_color%}
-#)
-#%{$fg[green]%}[%*]%{$reset_color%} %{$fg[yellow]%}%~%{$reset_color%}$(vim_bg_info)
-#%{$fg[cyan]%}%n%{$reset_color%}%(?.%{$fg[red]%}%(!.#.$).%{$fg_bold[white]%}%(!.#.$)) '
-
-PROMPT_CHAR=$(prompt_char)
 if [ "${USE_GIT}" = "false" ]
 then
 PROMPT='%(?, ,%{$fg[red]%}FAIL%{$reset_color%}
 )
-%{$fg[green]%}[%*]%{$reset_color%} %{$fg[yellow]%}%~%{$reset_color%}$(vim_bg_info)
+%{$fg[green]%}[%*]%{$reset_color%} %{$fg[yellow]%}%~%{$reset_color%}
 %{$fg[cyan]%}%n%{$reset_color%}%{$fg[magenta]%}@%m%{$reset_color%}${PROMPT_CHAR} '
 else 
 PROMPT='%(?, ,%{$fg[red]%}FAIL%{$reset_color%}
