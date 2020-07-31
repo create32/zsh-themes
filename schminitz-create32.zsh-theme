@@ -28,12 +28,12 @@ then
 PROMPT='%(?, ,%{$fg[red]%}FAIL%{$reset_color%}
 )
 %{$fg[green]%}[%*]%{$reset_color%} %{$fg[yellow]%}%~%{$reset_color%}
-%{$fg[cyan]%}%n%{$reset_color%}%{$fg[magenta]%}@%m%{$reset_color%}${PROMPT_CHAR} '
+%{$fg_bold[magenta]%}%n%{$reset_color%}%{$fg[magenta]%}@%m%{$reset_color%}${PROMPT_CHAR} '
 else 
 PROMPT='%(?, ,%{$fg[red]%}FAIL%{$reset_color%}
 )
 %{$fg[green]%}[%*]%{$reset_color%} %{$fg[yellow]%}%~%{$reset_color%}$(git_prompt_info)%{$reset_color%}$(git_prompt_ahead)%{$reset_color%}
-%{$fg[cyan]%}%n%{$reset_color%}%{$fg[magenta]%}@%m%{$reset_color%}${PROMPT_CHAR} '
+%{$fg_bold[magenta]%}%n%{$reset_color%}%{$fg[magenta]%}@%m%{$reset_color%}${PROMPT_CHAR} '
 fi
 
 # Time on right
