@@ -6,9 +6,10 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 [install theme]
 ./install.sh
 
-[#############################################]
+[#############################################]<br />
 I use powerlevel10k
 ```
+[[ $(which sudo) = "" ]] && [[ ! $UID -eq 0 ]] && echo Need root permission; exit 1
 git clone https://github.com/romkatv/powerlevel10k.git zsh/powerlevel10k
 git clone https://github.com/ohmyzsh/ohmyzsh.git zsh/ohmyzsh
 sudo cp -r zsh/ /opt
