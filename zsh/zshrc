@@ -8,8 +8,9 @@ fi
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+export ZSH_HOME=/opt/zsh
 # Path to your oh-my-zsh installation.
-export ZSH="/home/create32/.oh-my-zsh"
+export ZSH="${ZSH_HOME}/oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -20,7 +21,7 @@ USE_GIT="false"
 #ZSH_THEME="ys"
 #ZSH_THEME="schmin"
 #ZSH_THEME="mh_create32"
-source /opt/zsh/powerlevel10k/powerlevel10k.zsh-theme
+source ${ZSH_HOME}/powerlevel10k/powerlevel10k.zsh-theme
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME="spaceship"
@@ -116,4 +117,4 @@ source ~/.bash_profile
 unsetopt share_history
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ ! -f ${ZSH_HOME}/p10k.zsh ]] || source ${ZSH_HOME}/p10k.zsh
