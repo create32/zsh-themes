@@ -6,4 +6,3 @@ git clone https://github.com/ohmyzsh/ohmyzsh.git zsh/oh-my-zsh
 
 cp -r zsh/ /opt || sudo cp -r zsh/ /opt
 ln -s /opt/zsh/zshrc ~/.zshrc
-
