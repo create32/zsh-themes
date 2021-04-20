@@ -113,7 +113,10 @@ source $ZSH/oh-my-zsh.sh
 
 
 #source "/home/create32/.oh-my-zsh/custom/themes/spaceship.zsh-theme"
-source ~/.bash_profile
+if [ -f ~/.bash_profile ]; then
+	source ~/.bash_profile
+fi
+
 unsetopt share_history
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
