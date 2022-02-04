@@ -16,3 +16,10 @@ ln -s ~/.zsh/zshrc_user ~/.zshrc
 # cp -r zsh /opt/ || sudo cp -r zsh /opt/
 # ln -s /opt/zsh/zshrc ~/.zshrc
 
+if [ "$(which zsh)" == "" ]; then
+    sudo apt install zsh
+fi
+
+if [ "$(which zsh)" != "" ] || [ "$SHELL" != "$(which zsh)" ]; then
+    chsh -s $(which zsh)
+fi
