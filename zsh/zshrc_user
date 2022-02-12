@@ -121,3 +121,8 @@ unsetopt share_history
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ${ZSH_HOME}/p10k.zsh ]] || source ${ZSH_HOME}/p10k.zsh
+
+bindkey "^[[1~" beginning-of-line
+bindkey "^[[4~" end-of-line
+bindkey "^[[H" beginning-of-line
+bindkey "^[[F" end-of-line
